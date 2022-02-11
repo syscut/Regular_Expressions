@@ -16,7 +16,7 @@
     <tr><td>.</td><td>比對任何一個字元（但換列符號不算）</td><td>/.n/可比對nay, an apple is on the tree中的an和on</td></tr>
     <tr><td>(x)</td><td>比對x並將符合的部分存入一個變數</td><td><code>"https://www.google.com".replace(/(^https?:\/\/)(.*)/,'$2')</code>比對開始時是否包含http，s可出現零次或一次，接著:，然後用跳脫字元\ /\ /搜尋//，將結果存進變數$1，(.*)搜尋任意字元零次或更多次，將結果存進變數$2，最後把結果replace為$2，會得到www.google.com</td></tr>
     <tr><td>{n}</td><td>比對前一個字元n次，n為一個正整數</td><td>/a{3}/可比對aa aaa aaaa其中的aaa</td></tr>
-    <tr><td>{n,}</td><td>比對前一個字元<span style="color:Tomato">至少</span>n次，n 為一個正整數</td><td>/a{3}/<span style="color:Tomato">g</span>可比對aa aaa aaaa其中的aaa和aaaa</</td></tr>
+    <tr><td>{n,}</td><td>比對前一個字元<span style="color:Tomato">至少</span>n次，n 為一個正整數</td><td>/a{3,}/<span style="color:Tomato">g</span>可比對aa aaa aaaa其中的aaa和aaaa</</td></tr>
     <tr><td>{n,m}</td><td>比對前一個字元至少n次，至多m次，m、n均為正整數</td><td>/a{3,4}/<span style="color:Tomato">g</span>可比對aa aaa aaaa其中的aaa和aaaa</td></tr>
     <tr><td>[xyz]</td><td>比對中括弧內的任一個字元</td><td>/[ecm]/g可比對welcome中的e和c和m和e</td></tr>
     <tr><td>[^xyz]</td><td>比對不在中括弧內出現的任一個字元</td><td>/[^ecm]/g可比對welcome中的w和l和o可見出其與[xyz]功能相反</td></tr>
