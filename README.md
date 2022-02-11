@@ -59,12 +59,14 @@
 "https://google.com".replace(/(^https?:\/\/)(.*)/,'$2') = google.com
 ```
 > 解說：其中有2個括號第1個括號代表$1、第2個代表$2...依此類推，最後將整個字串替代為$2
+
 範例2：
 
 ```
 "aaabbbbcccccdd".replace(/(.)\1+/g,'$1') = "abcd"
 ```
 > 解說：括號後方\1代表匹配到的第一個群組，後面的+代表匹配到的那個字重複1次至多次，最後用$1來覆蓋掉($1為匹配到的那個單一字母)
+
 範例3：
 ```
 /(\w).*\1/.test("asdsz") = true
@@ -82,22 +84,26 @@
 /a(?!foo)/.test("afoo") = false
 ```
 > a的後面不能為foo
+
 ( ? = )為正向向前匹配如：
 ```
 /a(?=foo)/.test("afoo") = true
 ```
 > a的後面要為foo
+
 但是：
 ```
 /a(?=foo)/.test("afoobar") = false
 ```
 > a的後面確實是接了foo但是接下來會檢查下一個是否也為foo，結果為bar所以 `return false`
+
 所以：
 ```
 /a(?=foo)/.test("afoofoo") = true
 ```
 > a的後面檢查了2次都是foo
-<span style="color:Tomato">注意</span>：
+
+注意：
 ```
 /a(?=foo)bar/.test("afoobar") = false
 ```
@@ -108,6 +114,7 @@
 /(?<!foo)bar/.test("foobar") = false
 ```
 > foo後面不能為bar，所以 `return false`
+
 ( ? < = )為正向向後匹配如：
 ```
 /(?<=foo)bar/.test("asdfoobarasd") = true
