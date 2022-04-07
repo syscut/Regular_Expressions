@@ -22,7 +22,7 @@
     <tr><td>[^xyz]</td><td>比對不在中括弧內出現的任一個字元</td><td>/[^ecm]/g可比對welcome中的w和l和o可見出其與[xyz]功能相反</td></tr>
     <tr><td>\b</td><td>比對英文字的邊界，例如空格</td><td>/\bn\w/可以比對noonday中的no、/\wy\b/可比對possibly yesterday中的ly</td></tr>
     <tr><td>\B</td><td>比對非「英文字的邊界」</td><td>/\w\Bn/可以比對noonday中的on、/y\B\w/可以比對possibly yesterday中的ye</td></tr>
-    <tr><td>\d</td><td>比對任一個數字，等同於[0-9]</td><td>/[0-9]\b/g會比對出3和5</td></tr>
+    <tr><td>\d</td><td>比對任一個數字，等同於[0-9]</td><td></td></tr>
     <tr><td>\D</td><td>比對任一個非數字，等同於 [^0-9]</td><td></td></tr>
     <tr><td>\n</td><td>比對換列</td><td></td></tr>
     <tr><td>\r</td><td>比對carriage return</td><td></td></tr>
