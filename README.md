@@ -87,21 +87,9 @@
 
 ( ? = )為正向向前匹配如：
 ```
-/a(?=foo)/.test("afoo") = true
+/a(?=foo)/.test("afoobar") = true
 ```
 > a的後面要為foo
-
-但是：
-```
-/a(?=foo)/.test("afoobar") = false
-```
-> a的後面確實是接了foo但是接下來會檢查下一個是否也為foo，結果為bar所以 `return false`
-
-所以：
-```
-/a(?=foo)/.test("afoofoo") = true
-```
-> a的後面檢查了2次都是foo
 
 注意：
 ```
