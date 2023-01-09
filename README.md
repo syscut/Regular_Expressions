@@ -30,7 +30,7 @@
     <tr><td>\S</td><td>比對任一個'非'空白字元</td><td></td></tr>
     <tr><td>\w</td><td>比對數字英文字母或底線( _ )等同於[A-Za-z0-9_ ]</td><td>/\w/可比對 . A _ !9 中的A和 _ 和9</td></tr>
     <tr><td>\W</td><td>比對非「數字英文字母或底線」，等同於[^A-Za-z0-9_ ]</td><td>/\W/可比對 .A _ !9 中的 . 和 !</td></tr>
-    <tr><td>\U</td><td>在VSCode 的 find and replace 中，將匹配到的字轉為大寫</td><td>"emp_no" => find：_(.) => replace：\U$1 => ""</td></tr>
+    <tr><td>\U</td><td>在VSCode 的 find and replace 中，將匹配到的字轉為大寫</td><td>"emp_no" => find：_(.) => replace：\U$1 => "empNo"</td></tr>
   </tbody>
 </table>
 
