@@ -28,3 +28,9 @@ Java程式理想上，並不用理會真正執行於哪個平台之上，它只�
   java -cp ..\.. com.example.Demo
   ..\..表示切回上2層目錄，這樣package and class才對的上com.example.Demo
   ```
+### ★transient
+- 不會被序列化，該物件不會被寫入文件、或通過網路傳輸
+### ★volatile
+- 多個thred同時修改一個值時，能確保都可以讀取到最新的數值
+### ★Synchronized
+- 一次只能執行一個
