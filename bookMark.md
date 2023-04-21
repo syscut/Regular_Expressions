@@ -12,3 +12,8 @@
 - [How to get the path of a running JAR file?](https://stackoverflow.com/questions/320542/how-to-get-the-path-of-a-running-jar-file)
 - [Inserting text into an existing file via Java](https://stackoverflow.com/questions/289965/inserting-text-into-an-existing-file-via-java)
 ***
+### TypeScript
+- [Documentation](https://www.tslang.cn/index.html)
+***
+### Vscode Extension
+- [Documentation](https://liiked.github.io/VS-Code-Extension-Doc-ZH/#/)
