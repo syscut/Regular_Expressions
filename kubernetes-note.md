@@ -1,9 +1,39 @@
-## 安裝 kubectl 工具
+## Kubernetes Installation Guide
 
-- [安裝 kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
-- The Kubernetes command-line tool, [kubectl](https://kubernetes.io/docs/reference/kubectl/kubectl/), allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
+### [Before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#before-you-begin)
 
-## 安裝 Minikube
+- A compatible Linux host.
+- 2 GB or more of RAM per machine.
+- 2 CPUs or more.
+- Full network connectivity between all machines in the cluster (public or private network is fine).
+- Unique hostname, MAC address, and product_uuid for every node. See here for more details.
+- Certain ports are open on your machines. See [here](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#check-required-ports) for more details.
+- Swap disabled. You **MUST** disable swap in order for the kubelet to work properly.
+  - For example, `sudo swapoff -a` will disable swapping temporarily. To make this change persistent across reboots, make sure swap is disabled in config files like /etc/fstab, systemd.swap, depending how it was configured on your system.
+- Installing a container runtime
+  - To run containers in Pods, Kubernetes uses a container runtime.
+  - By default, Kubernetes uses the Container Runtime Interface (CRI) to interface with your chosen container runtime.
+  - ## related issue #4581 [Kubeadm unknown service runtime.](https://github.com/containerd/containerd/issues/4581)
+    - `kubeadm init` shows error below
+    ```
+    [preflight] Running pre-flight checks
+      error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR CRI]: container runtime is not running: output: ...
+    ```
+
+## [安裝 kubeadm、kubelet、kubectl 工具](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl)
+
+- `kubeadm` : the command to bootstrap the cluster.
+- `kubelet` : the component that runs on all of the machines in your cluster and does things like starting pods and containers.
+- `kubectl` : the command line util to talk to your cluster.
+
+## [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+
+```
+kubeadm init
+```
+
+## 安裝 Minikube (Optional)
 
 - [安裝 minikube](https://minikube.sigs.k8s.io/docs/start/)
 - Minikube 是由 Google 發布的一個輕量級工具。讓開發者可以在本機上輕易架設一個 Kubernetes Cluster，快速上手 Kubernetes 的指令與環境
@@ -37,47 +67,7 @@ sudo dpkg --purge minikube
   newgrp docker
   ```
 
-## Deployments
-
-### list all deployments
-
-```
-kubectl get deployments --all-namespaces
-```
-
-### delete the deployment
-
-- 如果 namespaces 是 default 不用加-n NAMESPACE
-
-  ```
-  kubectl delete -n NAMESPACE deployment DEPLOYMENT
-  ```
-
-## Pods
-
-### create pod
-
-- create pod by file, json or yaml formats are accepted
-
-  ```
-  kubectl create -f path/to/filename.json | filename.yaml
-  ```
-
-### pod detail
-
-- show pod detail
-
-  ```
-  kubectl describe pod <pod name>
-  ```
-
-- show pods and labels
-
-  ```
-  kubectl get pods --show-labels
-  ```
-
-### pull from docker hub
+## pull from docker hub
 
 - login docker first
 
@@ -94,15 +84,13 @@ kubectl get deployments --all-namespaces
 
 ## Deployment
 
-### create deployment
-
 - json or yaml formats are accepted
 
   ```
   kubectl apply -f path/to/filename.json | filename.yaml
   ```
 
-### deployments commands
+## [kubectl commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-strong-getting-started-strong-)
 
 <table>
 <tr><td>Deployment相關指令</td><td>指令功能</td></tr>
