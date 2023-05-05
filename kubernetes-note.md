@@ -1,5 +1,5 @@
 ## Kubernetes Installation Guide
-
+- [ref1](https://ithelp.ithome.com.tw/articles/10291343)
 ### [Before you begin](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#before-you-begin)
 
 - A compatible Linux host.
