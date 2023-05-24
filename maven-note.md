@@ -1,3 +1,12 @@
+### The order of Maven basic phases is:
+- Validate
+- Compile
+- Test
+- Package
+- Verify
+- Install
+- Deploy
+
 ### Generate JUnit Test Report
 - add in &lt;build&gt;
 - Run `mvn surefire-report:report`
@@ -14,7 +23,7 @@
 ```
 - 直接跑 `mvn site` 會有 error: `java.lang.NoClassDefFoundError: org/apache/maven/doxia/siterenderer/DocumentContent`
 - 需添加以下 Repository
-- 執行後會跑出整個 Project 的 R
+- 執行後會跑出整個 Project 的 Repository
 ```
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
