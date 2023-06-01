@@ -18,10 +18,13 @@ Java程式理想上，並不用理會真正執行於哪個平台之上，它只�
 ### ★javac
 - 編譯java檔為class檔
 ### ★java
+- 編譯為class檔
+  ```
+  javac -encoding utf-8 <java file>
+  ```
 - 執行class檔
 - 執行class檔時須注意package路徑，或是使用-cp來指定
   ```
-  ex:
   package name = com.example
   class name = Demo
   目前path與Demo.class相同
