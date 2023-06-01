@@ -1,5 +1,5 @@
 ## JVAV 教學https://openhome.cc/Gossip/JavaEssence/
-### ★JVN：https://openhome.cc/Gossip/JavaEssence/WhyJVM.html
+### ★JVM：https://openhome.cc/Gossip/JavaEssence/WhyJVM.html
 - java檔編譯為class的byte檔後由JVM編譯為相應的機器碼
 - JVM有個很重要的觀念就是：
 「對於Java程式而言，其實它只認識一種作業系統（或說是一種機器），這個系統叫作JVM，
