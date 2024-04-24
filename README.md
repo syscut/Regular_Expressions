@@ -109,3 +109,16 @@
 ```
 
 > foo後面為bar即 `return true` 再往後的asd就不會再匹配
+
+### 密碼範例
+```
+^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])(?!.*#)(?=\S+$).{9,}$
+```
+- ^                          start-of-string
+- (?=.*[a-z])                a lowercase letter must occur at least once
+- (?=.*[A-Z])                an uppercase letter must occur at least once
+- (?=.*[0-9])                a digit must occur at least once
+- (?=.*[^a-zA-Z0-9])(?!.*#)  a special character except '#' must occur at least once
+- (?=\S+$)                   no whitespace allowed in the entire string
+- .{9,}                      anything, at least nine places though
+- $                          end-of-string
